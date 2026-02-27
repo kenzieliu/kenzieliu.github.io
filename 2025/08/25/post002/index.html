@@ -1,0 +1,254 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Hexo + GitHub 搭建个人博客 | Kenzieliu's Blog</title><meta name="author" content="kenzieliu"><meta name="copyright" content="kenzieliu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Hexo + GitHub 搭建个人博客  一、前言1. HexoHexo 是一个快速、简洁且高效的博客框架，它能够将 Markdown 格式的文档解析并渲染为静态网页，从而方便地构建和部署个人博客。 2. GitHub 与 GitHub PagesGitHub 作为全球知名的代码托管平台，大家应该都有所了解。而在本次搭建过程中，我们将重点使用其提供的 GitHub Pages 服务。 什么是 G">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo + GitHub 搭建个人博客">
+<meta property="og:url" content="https://kenzieliu.github.io/2025/08/25/post002/index.html">
+<meta property="og:site_name" content="Kenzieliu&#39;s Blog">
+<meta property="og:description" content="Hexo + GitHub 搭建个人博客  一、前言1. HexoHexo 是一个快速、简洁且高效的博客框架，它能够将 Markdown 格式的文档解析并渲染为静态网页，从而方便地构建和部署个人博客。 2. GitHub 与 GitHub PagesGitHub 作为全球知名的代码托管平台，大家应该都有所了解。而在本次搭建过程中，我们将重点使用其提供的 GitHub Pages 服务。 什么是 G">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://kenzieliu.github.io/img/background.jpg">
+<meta property="article:published_time" content="2025-08-25T07:23:39.000Z">
+<meta property="article:modified_time" content="2026-02-27T14:46:27.614Z">
+<meta property="article:author" content="kenzieliu">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="GitHub">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://kenzieliu.github.io/img/background.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Hexo + GitHub 搭建个人博客",
+  "url": "https://kenzieliu.github.io/2025/08/25/post002/",
+  "image": "https://kenzieliu.github.io/img/background.jpg",
+  "datePublished": "2025-08-25T07:23:39.000Z",
+  "dateModified": "2026-02-27T14:46:27.614Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "kenzieliu",
+      "url": "https://kenzieliu.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://kenzieliu.github.io/2025/08/25/post002/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.3"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.json","preload":true,"top_n_per_article":1,"unescape":false,"pagination":{"enable":true,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Hexo + GitHub 搭建个人博客',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/butterfly-icon.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/background.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Kenzieliu's Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">Hexo + GitHub 搭建个人博客</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Hexo + GitHub 搭建个人博客</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-08-25T07:23:39.000Z" title="发表于 2025-08-25 15:23:39">2025-08-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-02-27T14:46:27.614Z" title="更新于 2026-02-27 22:46:27">2026-02-27</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%95%99%E7%A8%8B/">教程</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%95%99%E7%A8%8B/Hexo/">Hexo</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">1.9k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 align="center">Hexo + GitHub 搭建个人博客</h1>
+
+<h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><h3 id="1-Hexo"><a href="#1-Hexo" class="headerlink" title="1. Hexo"></a>1. Hexo</h3><p>Hexo 是一个快速、简洁且高效的博客框架，它能够将 Markdown 格式的文档解析并渲染为静态网页，从而方便地构建和部署个人博客。</p>
+<h3 id="2-GitHub-与-GitHub-Pages"><a href="#2-GitHub-与-GitHub-Pages" class="headerlink" title="2. GitHub 与 GitHub Pages"></a>2. GitHub 与 GitHub Pages</h3><p>GitHub 作为全球知名的代码托管平台，大家应该都有所了解。而在本次搭建过程中，我们将重点使用其提供的 <strong>GitHub Pages</strong> 服务。</p>
+<p><strong>什么是 GitHub Pages？</strong>简单来说，GitHub Pages 可以将托管在 GitHub 仓库中的静态代码（HTML、CSS、JS）渲染成可访问的网页。</p>
+<p><strong>如何使用？</strong>GitHub 为每个账户提供了一个特殊的仓库，专门用于托管个人站点。该仓库的命名规则必须为 <code>username.github.io</code>（其中 <code>username</code> 替换为你的 GitHub 用户名）。</p>
+<p><strong>访问方式：</strong>当你将博客内容上传至该仓库后，即可通过 <code>https://username.github.io</code> 访问你的个人博客。</p>
+<ul>
+<li>例如：如果用户名是 <code>kenzieliu</code>，访问地址就是 <code>https://kenzieliu.github.io</code>。</li>
+</ul>
+<h2 id="二、准备工作"><a href="#二、准备工作" class="headerlink" title="二、准备工作"></a>二、准备工作</h2><h3 id="1-注册-GitHub"><a href="#1-注册-GitHub" class="headerlink" title="1. 注册 GitHub"></a>1. 注册 GitHub</h3><p>需要有一个 GitHub 账号，没有的话可以去 <a target="_blank" rel="noopener" href="https://github.com/">官网</a> 注册一个。</p>
+<img src="/2025/08/25/post002/001.png" class="">
+
+<h3 id="2-安装Git"><a href="#2-安装Git" class="headerlink" title="2. 安装Git"></a>2. 安装Git</h3><p>Git 是一个开源的分布式版本控制系统，可高效管理从小型到大型项目的版本变更。</p>
+<h4 id="下载和安装"><a href="#下载和安装" class="headerlink" title="下载和安装"></a>下载和安装</h4><p>可前往 <a target="_blank" rel="noopener" href="https://git-scm.com/downloads">Git 官网</a> 获取安装包。下载完成后，双击安装程序，按照提示一路点击 “Next” 进行默认安装即可。安装完成后，在任意文件夹内右键若出现 “Git Bash Here” 选项（这是 Git 的命令行工具），则说明 Git 已成功安装。</p>
+<img src="/2025/08/25/post002/002.png" class="">
+
+<img src="/2025/08/25/post002/003.png" class="">
+
+<h4 id="设置用户名和邮箱"><a href="#设置用户名和邮箱" class="headerlink" title="设置用户名和邮箱"></a>设置用户名和邮箱</h4><p>由于 Git 是分布式版本控制系统，在进行代码提交前需要设置用户名和邮箱作为提交者的身份标识。可在命令行中输入以下命令进行配置：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;user_name&quot;</span> <span class="comment"># user_name 填入 GitHub 用户名</span></span><br><span class="line">git config --global user.email <span class="string">&quot;user_email&quot;</span> <span class="comment"># user_email 填入 GitHub 注册的邮箱</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-安装Node-js"><a href="#3-安装Node-js" class="headerlink" title="3. 安装Node.js"></a>3. 安装Node.js</h3><p>进入 <a target="_blank" rel="noopener" href="https://nodejs.org/en/">Node官网</a> 下载最新稳定版本，然后参考 <a target="_blank" rel="noopener" href="https://blog.csdn.net/yaorongke/article/details/119084295">安装教程</a> 进行安装即可。</p>
+<img src="/2025/08/25/post002/004.png" class="">
+
+<p>安装 Node.js 会包含环境变量以及 npm 的安装，安装后，可以在命令行输入如下命令检测 Node.js 是否安装成功：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#在 nodejs 安装成功的情况下会显示 nodejs 的版本号</span></span><br><span class="line">node -v </span><br><span class="line"><span class="comment">#在 nodejs 安装成功的情况下会显示 npm 的版本号</span></span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+
+<p>将 npm 修改为国内源，以便于正常使用：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#修改为淘宝镜像源</span></span><br><span class="line">npm config <span class="built_in">set</span> registry https://registry.npmmirror.com</span><br></pre></td></tr></table></figure>
+
+<h2 id="三、创建仓库"><a href="#三、创建仓库" class="headerlink" title="三、创建仓库"></a>三、创建仓库</h2><p>登录 GitHub 账号，新建一个名为 <code>username.github.io</code>（这里的 username 要替换成自己的实际的用户名） 的仓库。</p>
+<img src="/2025/08/25/post002/005.png" class="">
+
+
+
+<p>如上图，点击 <code>New repository</code> 按钮，进入仓库创建页面。</p>
+<p>填写仓库名，格式必须为<code>&lt;用户名&gt;.github.io</code>，然后点击<code>Create repository</code>。</p>
+<img src="/2025/08/25/post002/006.png" class="">
+
+<h2 id="四、配置-GitHub-SSH-key"><a href="#四、配置-GitHub-SSH-key" class="headerlink" title="四、配置 GitHub SSH key"></a>四、配置 GitHub SSH key</h2><p>之所以需要进行相关配置，是因为我们首先要在本地搭建 Hexo 框架，编写博客内容，并将其编译为 HTML 页面后上传到 GitHub 仓库。在本地与 GitHub 进行连接和代码推送时，需要借助 Git 工具完成操作，而这些操作必须具备账户的访问权限。获取权限通常有两种方式：一种是通过 Personal Access Token（即 GitHub 提供的访问密钥）；另一种是本文所采用的方法。相比之下，本文介绍的方式更加便捷高效，强烈推荐使用。</p>
+<p>打开 Git Bash，输入命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;user.email&quot;</span> <span class="comment"># user.email 为GitHub 上注册的邮箱</span></span><br></pre></td></tr></table></figure>
+
+<p>随后连续按三次回车即可，默认情况下无需单独设置密码。接下来需要检查本地是否已经生成 SSH 密钥。打开用户主目录 <code>C:\Users\username\</code>，找到其中的 <code>.ssh</code> 文件夹（该文件夹位于 C 盘的用户目录下），进入后即可查看相关密钥文件。</p>
+<img src="/2025/08/25/post002/007.png" class="">
+
+<p>然后找到生成的 .ssh 的文件夹中的 id_rsa.pub 密钥，将内容全部复制。其中 id_rsa 是私钥不能泄露，id_rsa.pub 是公钥可以放心告诉他人。</p>
+<p>在 GitHub的 <code>Settings</code> 中点击 <code>SSH and GPG keys</code> 选项打开新建页面，新建一个 SSH Key。</p>
+<img src="/2025/08/25/post002/008.png" class="">
+
+<p><code>Title</code> 为标题，任意填即可，将刚刚复制的 <code>id_rsa.pub</code> 内容粘贴进去，最后点击 <code>Add SSH key</code>。在 <code>Git Bash</code> 中检测 <code>GitHub</code> 公钥设置是否成功，输入如下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+<p>验证是否连接成功，连接成功的话，显示如下：</p>
+<img src="/2025/08/25/post002/009.png" class="">
+
+<h2 id="五、安装Hexo"><a href="#五、安装Hexo" class="headerlink" title="五、安装Hexo"></a>五、安装Hexo</h2><h3 id="1-Hexo-原理"><a href="#1-Hexo-原理" class="headerlink" title="1. Hexo 原理"></a>1. Hexo 原理</h3><p>由于 GitHub Pages 只能托管静态文件，而博客除了文章正文外，还包含文章列表、分类、标签、分页等结构化内容。如果每次发布新文章都需要手动更新目录和相关链接，工作量将十分繁琐。Hexo 的作用正是在于此：它将所有 Markdown 文件统一存放在本地，每次写完文章后，只需执行相应命令即可自动批量生成完整的静态页面，最后再将更新后的文件提交到 GitHub 即可，大大提升了博客维护的效率。</p>
+<h3 id="2-安装与初始化"><a href="#2-安装与初始化" class="headerlink" title="2. 安装与初始化"></a>2. 安装与初始化</h3><p>在 <code>Git Bash</code> 中输入以下命令：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli # 此命令完成对 hexo 的安装</span><br></pre></td></tr></table></figure>
+
+<p>安装完成后，在电脑的某个地方新建一个文件夹（名字可以随便取）专门用于存放博客代码，比如我的是 <code>D:\workspace\myblog\hexo-blog</code>，由于这个文件夹将来存放博客的所有内容和素材，以及所有的博客操作都会在其中完成，所以最好不要随便放。</p>
+<p>进入新建的博客目录，输入如下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init   # 该命令完成 hexo 在本地博客目录的初始化</span><br></pre></td></tr></table></figure>
+
+<img src="/2025/08/25/post002/010.png" class="">
+
+<h3 id="3-生成静态文件"><a href="#3-生成静态文件" class="headerlink" title="3. 生成静态文件"></a>3. 生成静态文件</h3><p>在 <code>Git Bash</code> 中输入以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g   <span class="comment"># 生成静态文件</span></span><br></pre></td></tr></table></figure>
+
+<p>执行以上命令后，Hexo 就会在 <code>public</code> 文件夹中生成相关的 <code>html</code> 文件，这些文件将来都是要提交到 <code>GitHub</code> 上的 <code>username.github.io</code> 的仓库中去的。</p>
+<h3 id="4-本体预览"><a href="#4-本体预览" class="headerlink" title="4. 本体预览"></a>4. 本体预览</h3><p>在 <code>Git Bash</code> 输入以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s <span class="comment"># 开启本地预览</span></span><br></pre></td></tr></table></figure>
+
+<p><code>hexo s</code> 是开启本地预览服务，打开浏览器访问 <code>http://localhost:4000</code> 即可看到内容，<code>Ctrl+C</code> 停止本地预览。本地预览可以实时查看博客的编辑情况，待博客写完后一起部署到 <code>GitHub</code> 上。</p>
+<p>第一次初始化的时候 <code>hexo</code> 已经帮我们写了一篇名为 Hello World 的文章。</p>
+<h2 id="六、推送到GitHub"><a href="#六、推送到GitHub" class="headerlink" title="六、推送到GitHub"></a>六、推送到GitHub</h2><h3 id="1-配置站点配置文件"><a href="#1-配置站点配置文件" class="headerlink" title="1. 配置站点配置文件"></a>1. 配置站点配置文件</h3><p><code>hexo</code> 有 2 种 <code>_config.yml</code> 文件，一个是根目录下的全局的 <code>_config.yml</code>，一个是各个主题 <code>theme</code> 下的 <code>_config.yml</code>。将前者称为站点配置文件， 后者称为主题配置文件。</p>
+<p>打开根目录下站点配置文件 <code>_config.yml</code>，配置有关 <code>deploy</code> 的部分：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:fanlumaster/你的用户名.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-安装插件"><a href="#2-安装插件" class="headerlink" title="2. 安装插件"></a>2. 安装插件</h3><p>在 <code>Git Bash</code> 中输入以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save   <span class="comment"># 安装部署插件</span></span><br></pre></td></tr></table></figure>
+
+<p>如果不进行上述操作，直接使用 <code>hexo d</code> 部署到 <code>GitHub</code>，将会报错。</p>
+<h3 id="3-修改配置"><a href="#3-修改配置" class="headerlink" title="3. 修改配置"></a>3. 修改配置</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.safecrlf false</span><br></pre></td></tr></table></figure>
+
+<p>这个必须执行，不然使用推送必报错</p>
+<h3 id="4-部署到-GitHub"><a href="#4-部署到-GitHub" class="headerlink" title="4. 部署到 GitHub"></a>4. 部署到 GitHub</h3><p>在 <code>Git Bash</code> 中输入以下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<p>部署成功后，打开对应的网址 <code>https://username.github.io</code>，如果出现了和本地预览一样的效果，那么，表明部署成功。</p>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Hexo/">Hexo</a><a class="post-meta__tags" href="/tags/GitHub/">GitHub</a></div><div class="post-share"><div class="social-share" data-image="/img/background.jpg" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2025/08/23/test-article/" title="test-article"><img class="cover" src="/img/default_cover5.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">test-article</div></div><div class="info-2"><div class="info-item-1">这是一篇测试文章欢迎观看  </div></div></div></a><a class="pagination-related" href="/2025/08/26/post001/" title="Hexo 写博客指南"><img class="cover" src="/img/default_cover8.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">Hexo 写博客指南</div></div><div class="info-2"><div class="info-item-1">Hexo 写博客指南这是一份面向新手和进阶用户的 Hexo 写作指南，整合了常见问题与一些经验。内容涵盖目录结构、文章写作、分类标签管理、草稿发布以及部署方式等。 1. Hexo 目录结构一个典型的 Hexo 博客目录：    _posts&#x2F;：专门放文章，Hexo 会根据 Front-matter 自动生成分类、标签、归档。 source&#x2F;xxx&#x2F;：放置独立页面，比如关于、友链、相册等。 scaffolds&#x2F;：定义 hexo new 时文章的默认模板。 themes&#x2F;：主题目录，可以自定义样式与功能。  2. 写文章的基本操作新建文章1hexo new post &quot;我的第一篇文章&quot;  文章头部 Front-matter123456---title: 我的第一篇文章date: 2025-10-10 15:00:00categories: 学习tags: [Hexo, 教程]---  草稿写作1hexo new draft &quot;草稿文章&quot;  草稿会保存在 source/_drafts/ 下。发布草...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2025/08/26/post001/" title="Hexo 写博客指南"><img class="cover" src="/img/default_cover8.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-08-26</div><div class="info-item-2">Hexo 写博客指南</div></div><div class="info-2"><div class="info-item-1">Hexo 写博客指南这是一份面向新手和进阶用户的 Hexo 写作指南，整合了常见问题与一些经验。内容涵盖目录结构、文章写作、分类标签管理、草稿发布以及部署方式等。 1. Hexo 目录结构一个典型的 Hexo 博客目录：    _posts&#x2F;：专门放文章，Hexo 会根据 Front-matter 自动生成分类、标签、归档。 source&#x2F;xxx&#x2F;：放置独立页面，比如关于、友链、相册等。 scaffolds&#x2F;：定义 hexo new 时文章的默认模板。 themes&#x2F;：主题目录，可以自定义样式与功能。  2. 写文章的基本操作新建文章1hexo new post &quot;我的第一篇文章&quot;  文章头部 Front-matter123456---title: 我的第一篇文章date: 2025-10-10 15:00:00categories: 学习tags: [Hexo, 教程]---  草稿写作1hexo new draft &quot;草稿文章&quot;  草稿会保存在 source/_drafts/ 下。发布草...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/butterfly-icon.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">kenzieliu</div><div class="author-info-description">心有所期，全力以赴，定有所成</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/kenzieliu"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Welcome to kenzieliu's blog !</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">Hexo + GitHub 搭建个人博客</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%89%8D%E8%A8%80"><span class="toc-number">1.1.</span> <span class="toc-text">一、前言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Hexo"><span class="toc-number">1.1.1.</span> <span class="toc-text">1. Hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-GitHub-%E4%B8%8E-GitHub-Pages"><span class="toc-number">1.1.2.</span> <span class="toc-text">2. GitHub 与 GitHub Pages</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">1.2.</span> <span class="toc-text">二、准备工作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%B3%A8%E5%86%8C-GitHub"><span class="toc-number">1.2.1.</span> <span class="toc-text">1. 注册 GitHub</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85Git"><span class="toc-number">1.2.2.</span> <span class="toc-text">2. 安装Git</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E5%92%8C%E5%AE%89%E8%A3%85"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">下载和安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E7%94%A8%E6%88%B7%E5%90%8D%E5%92%8C%E9%82%AE%E7%AE%B1"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">设置用户名和邮箱</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%AE%89%E8%A3%85Node-js"><span class="toc-number">1.2.3.</span> <span class="toc-text">3. 安装Node.js</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93"><span class="toc-number">1.3.</span> <span class="toc-text">三、创建仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E9%85%8D%E7%BD%AE-GitHub-SSH-key"><span class="toc-number">1.4.</span> <span class="toc-text">四、配置 GitHub SSH key</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%AE%89%E8%A3%85Hexo"><span class="toc-number">1.5.</span> <span class="toc-text">五、安装Hexo</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Hexo-%E5%8E%9F%E7%90%86"><span class="toc-number">1.5.1.</span> <span class="toc-text">1. Hexo 原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85%E4%B8%8E%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">1.5.2.</span> <span class="toc-text">2. 安装与初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E7%94%9F%E6%88%90%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6"><span class="toc-number">1.5.3.</span> <span class="toc-text">3. 生成静态文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%9C%AC%E4%BD%93%E9%A2%84%E8%A7%88"><span class="toc-number">1.5.4.</span> <span class="toc-text">4. 本体预览</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E6%8E%A8%E9%80%81%E5%88%B0GitHub"><span class="toc-number">1.6.</span> <span class="toc-text">六、推送到GitHub</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E9%85%8D%E7%BD%AE%E7%AB%99%E7%82%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">1.6.1.</span> <span class="toc-text">1. 配置站点配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6"><span class="toc-number">1.6.2.</span> <span class="toc-text">2. 安装插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE"><span class="toc-number">1.6.3.</span> <span class="toc-text">3. 修改配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E9%83%A8%E7%BD%B2%E5%88%B0-GitHub"><span class="toc-number">1.6.4.</span> <span class="toc-text">4. 部署到 GitHub</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/10/02/post008/" title="Redis 知识点总结"><img src="/img/default_cover7.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Redis 知识点总结"/></a><div class="content"><a class="title" href="/2025/10/02/post008/" title="Redis 知识点总结">Redis 知识点总结</a><time datetime="2025-10-02T14:19:30.000Z" title="发表于 2025-10-02 22:19:30">2025-10-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/10/01/post007/" title="MySQL 知识点总结"><img src="/img/default_cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MySQL 知识点总结"/></a><div class="content"><a class="title" href="/2025/10/01/post007/" title="MySQL 知识点总结">MySQL 知识点总结</a><time datetime="2025-10-01T14:19:30.000Z" title="发表于 2025-10-01 22:19:30">2025-10-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/09/15/post006/" title="windows安装两个或多个JDK，并实现自由切换"><img src="/img/default_cover6.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="windows安装两个或多个JDK，并实现自由切换"/></a><div class="content"><a class="title" href="/2025/09/15/post006/" title="windows安装两个或多个JDK，并实现自由切换">windows安装两个或多个JDK，并实现自由切换</a><time datetime="2025-09-15T14:20:13.000Z" title="发表于 2025-09-15 22:20:13">2025-09-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/09/11/post005/" title="Deque（双端队列）的常见实现类"><img src="/img/background.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Deque（双端队列）的常见实现类"/></a><div class="content"><a class="title" href="/2025/09/11/post005/" title="Deque（双端队列）的常见实现类">Deque（双端队列）的常见实现类</a><time datetime="2025-09-11T14:19:13.000Z" title="发表于 2025-09-11 22:19:13">2025-09-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/09/10/post004/" title="Canal+MQ技术方案解析"><img src="/img/archive_img.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Canal+MQ技术方案解析"/></a><div class="content"><a class="title" href="/2025/09/10/post004/" title="Canal+MQ技术方案解析">Canal+MQ技术方案解析</a><time datetime="2025-09-10T14:19:13.000Z" title="发表于 2025-09-10 22:19:13">2025-09-10</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/background.jpg);"><div class="footer-other"><div class="footer-copyright"></div><div class="footer_custom_text">Hi, welcome to my blog !</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.3"></script><script src="/js/main.js?v=5.5.3"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.3"></script></div></div></body></html>
